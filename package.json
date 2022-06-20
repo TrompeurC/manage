@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix"
+    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "husky": "^8.0.1",
@@ -31,5 +32,11 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
