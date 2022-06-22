@@ -61,20 +61,20 @@ export default class AxiosRequest {
     );
   }
 
-  request<T>(config: RequestConfig): Promise<AxiosResponse<T>> {
+  request<T>(config: RequestConfig): Promise<T> {
     if (config.showLoading === false) this.showLoading = config.showLoading;
-    return this.instance.request<T>(config);
+    return this.instance.request<any, T>(config);
   }
-  get<T>(config: RequestConfig): Promise<AxiosResponse<T>> {
+  get<T>(config: RequestConfig): Promise<T> {
     return this.request<T>({ ...config, method: 'GET' });
   }
-  post<T>(config: RequestConfig): Promise<AxiosResponse<T>> {
+  post<T>(config: RequestConfig): Promise<T> {
     return this.request<T>({ ...config, method: 'POST' });
   }
-  delete<T>(config: RequestConfig): Promise<AxiosResponse<T>> {
+  delete<T>(config: RequestConfig): Promise<T> {
     return this.request<T>({ ...config, method: 'DELETE' });
   }
-  patch<T>(config: RequestConfig): Promise<AxiosResponse<T>> {
+  patch<T>(config: RequestConfig): Promise<T> {
     return this.request<T>({ ...config, method: 'PATCH' });
   }
 }

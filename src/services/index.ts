@@ -21,13 +21,3 @@ const request = new Request({
     },
   },
 });
-
-request.request({
-  url: '/api',
-  showLoading: false,
-});
-setTimeout(() => {
-  request.request({
-    url: '/api',
-  });
-}, 10000);
