@@ -8,7 +8,18 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
   // ESLint 中基础配置需要继承的配置
-  extends: ['plugin:vue/vue3-essential', '@vue/standard'],
+  extends: [
+    // https://github.com/vuejs/eslint-plugin-vue
+    // 'plugin:vue/vue3-essential',
+    // https://github.com/vuejs/eslint-config-standard
+    // 'standard'
+    'plugin:vue/vue3-recommended',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则,
+    'prettier',
+    'plugin:prettier/recommended',
+    './.eslintrc-auto-import.json',
+  ], // 这是unplugin-auto-import/vite相关配置，自动引入vue相关api
   // 解析器
   parserOptions: {
     parser: 'babel-eslint',
@@ -29,5 +40,6 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-unused-vars': 'off',
   },
 };
