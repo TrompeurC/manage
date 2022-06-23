@@ -4,9 +4,13 @@
     "node": true
   },
   "parser": "vue-eslint-parser",
-  "extends": ["plugin:vue/vue3-essential", "@vue/standard"],
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
-    "parser": "@babel/eslint-parser",
+    "parser": "@typescript-eslint/parser",
     "requireConfigFile": false
   },
   "rules": {

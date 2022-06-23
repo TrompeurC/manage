@@ -7,10 +7,10 @@ module.exports = {
     node: true,
   },
   // ESLint 重基础配置需要继承的配置
-  extends: ['plugin:vue/vue3-essential', '@vue/standard'],
+  extends: ['plugin:vue/vue3-strongly-recommended', '@vue/standard'],
   // 解析器
   parserOptions: {
-    parser: '@babel/eslint-parser',
+    parser: '@typescript-eslint/parser',
     requireConfigFile: false,
   },
   // 错误分为3级
